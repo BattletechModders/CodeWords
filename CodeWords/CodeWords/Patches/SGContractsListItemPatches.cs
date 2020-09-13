@@ -12,10 +12,13 @@ namespace CodeWords.Patches
         static void Postfix(SGContractsListItem __instance, Contract contract, SimGameState sim, LocalizableText ___contractName)
         {
             Mod.Log.Trace?.Write("SGCLI:I entered.");
+            //System.Diagnostics.StackTrace t = new System.Diagnostics.StackTrace();
+            //Mod.Log.Debug?.Write($"SGCLI:I entered with stacktrace: {t}");
 
-            Mod.Log.Debug?.Write($"Populating details for contract: {contract.GUID} with typeID: {contract.ContractTypeValue.ID} with typeValue.name: {contract.ContractTypeValue.Name}");
+            Mod.Log.Debug?.Write(contract.DebugString());
 
             string codeName = NameHelper.GetOrCreateCodename(contract);
+            Mod.Log.Debug?.Write($"SGCLI setting codename to: {codeName}");
             ___contractName.SetText(codeName);
         }
     }

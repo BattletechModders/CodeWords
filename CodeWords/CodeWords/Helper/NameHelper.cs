@@ -1,15 +1,42 @@
 ﻿using BattleTech;
-using HBS.Text;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace CodeWords.Helper
 {
     public static class NameHelper
     {
+        public static string DebugString(this Contract contract)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append($"  name: {contract.Name}");
+            sb.Append($"  type: {contract?.ContractTypeValue?.Name}");
+            sb.Append($"  guid: {contract?.GUID}");
+            sb.Append($"  encounterObjectGuid: {contract?.encounterObjectGuid}");
+            sb.Append($"  ExpirationTime: {contract?.ExpirationTime}");
+            sb.Append($"  serialziedContractOverride: {contract?.serialziedContractOverride}");
+            sb.Append($"  hashCode: {contract?.GetHashCode()}");
+            sb.Append("  == lanceDefs ==");
+            foreach (string lanceDef in contract.LanceDefinitions)
+            {
+                sb.Append($"    lanceDef: {lanceDef}");
+            }
+            sb.Append($"  == override ==");
+            sb.Append($"    ID: {contract?.Override?.ID}");
+            sb.Append($"    mapMood: {contract?.Override?.mapMood}");
+            sb.Append($"    travelSeed: {contract?.Override?.travelSeed}");
+            sb.Append($"    expirationTimeOverride: {contract?.Override?.expirationTimeOverride}");
+
+            return sb.ToString();
+        }
+
         public static string GetOrCreateCodename(Contract contract)
         {
+            if (contract == null) return "BRUTAL ERROR";
+
             string codename = "BRUTAL ERROR";
             bool hasCodename = ModState.ContractGUIDToCodeName.TryGetValue(contract.GUID, out codename);
             if (!hasCodename)

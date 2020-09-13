@@ -69,8 +69,10 @@
     <Compile Include="ModInit.cs" />
     <Compile Include="ModState.cs" />
     <Compile Include="ModText.cs" />
+    <Compile Include="Patches\LanceContractDetailsWidgetPatches.cs" />
     <Compile Include="Patches\SGContractsListItemPatches.cs" />
     <Compile Include="Patches\SGContractsWidgetPatches.cs" />
+    <Compile Include="Patches\SimGameStatePatches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

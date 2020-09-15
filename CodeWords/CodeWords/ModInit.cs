@@ -31,7 +31,7 @@ namespace CodeWords {
                 Mod.Config = new ModConfig();
             }
 
-            Log = new DeferringLogger(modDirectory, LogName, Config.Debug, Config.Trace);
+            Log = new DeferringLogger(modDirectory, LogName, "CWORD", Config.Debug, Config.Trace);
 
             Assembly asm = Assembly.GetExecutingAssembly();
             FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(asm.Location);

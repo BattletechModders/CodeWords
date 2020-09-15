@@ -1,79 +1,19 @@
 {
-	"Name": "IRTweaks",
-	"Enabled": true,
-	"Hidden": true,
-	"Version": "0.7.4",
-	"Description": "Miscellaneous Tweaks and Fixes",
-	"Author": "IceRaptor",
-	"Website": "https://github.com/IceRaptor/IRTweaks",
-	"Contact": "",
-	"DLL": "IRTweaks.dll",
-	"DependsOn": [ "IRBTModUtils" ],
-	"Settings": {
-		"Debug": true,
-		"Trace": false,
-		"Fixes": {
-			"AlternateMechNamingStyle": false,
-            "BuildingDamageColorChange" : true,
-            "BraceOnMeleeWithJuggernaut" : true,
-			"BulkPurchasing": true,
-			"CombatLog": false,
-			"DisableCampaign": false,
-			"DisableCombatSaves": false,
-            "DisableMPHashCalculation" : true,
-			"ExtendedStats": false,
-			"FlexibleSensorLock": false,
-            "MechbayLayout" : true,
-			"MultiTargetStat": true,
-			"PainTolerance": true,
-			"PathfinderTeamFix": true,
-			"PreventHeadShots": false,
-			"RandomStartByDifficulty": true,
-			"ReduceSaveCompression": true,
-			"ShowAllArgoUpgrades": true,
-            "SimGameDifficultyLabelsReplacer" : false,
-			"SkirmishAlwaysUnlimited": true,
-			"SkirmishReset": false,
-			"SkipDeleteSavePopup": true,
-			"SpawnProtection": false,
-			"StreamlinedMainMenu": true,
-            "UrbanExplosionsFix" : true,
-			"WeaponTooltip": false,
-		},
-		"Abilities": {
-            "FlexibleSensorLockId": "AbilityDefT8A",
-            "JuggernautId" : "AbilityDefGu8",
-			"MultiTargetId": "AbilityDefG5"
-		},
-		"Combat": {
-			"FlexibleSensorLock": {
-				"FreeActionWithAbility": false
-			},
-			"PainTolerance": {
-                "ResistPerGuts": 10,
-                "HeadDamageResistPenaltyPerArmorPoint": 5,
-                "HeadHitArmorOnlyResistPenaltyMulti": 0.5
-                "AmmoExplosionResistPenaltyPerCapacityPercentile": 1,
-                "OverheatResistPenaltyPerHeatPercentile": 1,
-                "KnockdownResistPenalty": 6,
-                "SideLocationDestroyedResistPenalty": 10,
-			},
-			"SpawnProtection": {
-				"ApplyGuard": true,
-				"EvasionPips": 6,
-				"ApplyToEnemies": true,
-				"ApplyToAllies": true,
-				"ApplyToNeutrals": true,
-				"ApplyToReinforcements": true
-			}
-		},
-		"Store": {
-			"QuantityOnShift": 5,
-			"QuantityOnControl": 20
-		},
-        "SimGameDifficultyStrings" : {
-            "DESCRIPTION" : "Overall Difficulty",
-            "LABEL" : "Difficulty"
-        }
-	}
+    "Name": "CodeWords",
+    "Enabled": true,
+    "Version": "0.1.0",
+    "Description": "Randomizes and obfuscates contract names",
+    "Author": "IceRaptor",
+    "Website": "https://github.com/IceRaptor/CodeWords",
+    "Contact": "",
+    "DLL": "CodeWords.dll",
+    "DLLEntryPoint" : "CodeWords.Mod.Init",
+    "DependsOn" : [ "IRBTModUtils" ],
+    "OptionallyDependsOn" :  [ ],
+	"CustomResourceTypes": [ "CustomSVGIcon" ],
+    "Manifest": [ { "Type": "SVGAsset", "Path": "icons/"} ],
+    "Settings": {
+        "Debug" : true,
+        "Trace" : false,
+    }
 }

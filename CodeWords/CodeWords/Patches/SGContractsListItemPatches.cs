@@ -3,6 +3,7 @@ using BattleTech.UI;
 using BattleTech.UI.TMProWrapper;
 using CodeWords.Helper;
 using Harmony;
+using System;
 
 namespace CodeWords.Patches
 {
@@ -12,12 +13,25 @@ namespace CodeWords.Patches
         static void Postfix(SGContractsListItem __instance, Contract contract, SimGameState sim, LocalizableText ___contractName)
         {
             Mod.Log.Trace?.Write("SGCLI:I entered.");
-            //System.Diagnostics.StackTrace t = new System.Diagnostics.StackTrace();
-            //Mod.Log.Debug?.Write($"SGCLI:I entered with stacktrace: {t}");
+            Mod.Log.Debug?.Write($"SGCLI:I => {contract.DebugString()}");
 
-            Mod.Log.Debug?.Write(contract.DebugString());
+            string codeName = ModConsts.DefaultCodeName;
+            //if (contract.Override != null && contract.Override.travelSeed != 0)
+            //{
+            //    // We are a travel contract, see if we can find the contract by the cache key first
+            //    if (String.IsNullOrEmpty(ModState.NullGuidCodename))
+            //    {
+            //        ModState.NullGuidCodename = NameHelper.GenerateCodename(contract);
+            //    }
+            //    Mod.Log.Debug?.Write("Using null GUID codename for travel contract.");
+            //    codeName = ModState.NullGuidCodename;
+            //}
+            //else
+            //{
+            //    codeName = NameHelper.GetOrCreateCodename(contract);
+            //}
+            codeName = NameHelper.GetOrCreateCodename(contract);
 
-            string codeName = NameHelper.GetOrCreateCodename(contract);
             Mod.Log.Debug?.Write($"SGCLI setting codename to: {codeName}");
             ___contractName.SetText(codeName);
         }

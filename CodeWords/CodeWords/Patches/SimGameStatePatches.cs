@@ -1,4 +1,5 @@
 ﻿using BattleTech;
+using BattleTech.Save;
 using CodeWords.Helper;
 using Harmony;
 using System;
@@ -48,11 +49,28 @@ namespace CodeWords.Patches
     [HarmonyPatch(typeof(SimGameState), "Rehydrate")]
     static class SimGameState_Rehydrate
     {
-        static void Postfix(SimGameState __instance)
+        static void Prefix(SimGameState __instance, List<ContractData> ___contractBits)
         {
             Mod.Log.Debug?.Write("SGS:R entered.");
+
+            Mod.Log.Debug?.Write(" == CONTRACT DATA ==");
+            foreach (ContractData cd in ___contractBits)
+            {
+                Mod.Log.Debug?.Write($"  -- name: {cd.conName} guid: {cd.GUID}  target: {cd.conTarget}  employer: {cd.conEmployer}  location: {cd.conLocation} ");
+            }
+            Mod.Log.Debug?.Write(" == DONE ==");
         }
     }
+
+    [HarmonyPatch(typeof(SimGameState), "PrepareBreadcrumb")]
+    static class SimGameState_PrepareBreadcrumb
+    {
+        static void Postfix(SimGameState __instance)
+        {
+            Mod.Log.Debug?.Write("SGS:PB entered.");
+        }
+    }
+
 
     [HarmonyPatch(typeof(SimGameState), "CompleteLanceConfigurationPrep")]
     static class SimGameState_CompleteLanceConfigurationPrep
@@ -70,22 +88,12 @@ namespace CodeWords.Patches
 
             if (__instance.SelectedContract != null && String.IsNullOrEmpty(__instance.SelectedContract.GUID))
             {
-                Mod.Log.Debug?.Write($"Contract was likely spawned from travel. Try to match it against available contracts.");
+                Mod.Log.Debug?.Write($"SGS:CLCP Contract was likely spawned from travel. Try to match it against available contracts.");
                 foreach (Contract contract in ModState.SimGameState.GetAllCurrentlySelectableContracts())
                 {
                     Mod.Log.Debug?.Write($" -- Contract: {contract.DebugString()}");
-
                 }
-                //Contract matchedContract = ModState.SimGameState.GetAllCurrentlySelectableContracts(false).Where(x => x.Override != null && x.Override.travelSeed != 0).First();
-                //if (matchedContract != null)
-                //{
-                //    Mod.Log.Debug?.Write($"SGS matched contract is: {matchedContract.DebugString()}, updating GUID on SelectedContract to: {matchedContract.GUID}");
-                //    ModState.ActiveContractGUID = matchedContract.GUID;
-                //}
-                //else
-                //{
-                //    Mod.Log.Warn?.Write("Failed to match a contract, I expect breakage!");
-                //}
+                
 
             }
         }

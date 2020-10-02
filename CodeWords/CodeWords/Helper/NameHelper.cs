@@ -82,11 +82,11 @@ namespace CodeWords.Helper
             if (!String.IsNullOrEmpty(employerFaction.Name))
             {
                 bool hasFactionNames = Mod.LocalizedText.FactionNames.TryGetValue(employerFaction.Name, out Dictionary<string, List<string>> employerNames);
-                if (hasFactionNames)
+                if (hasFactionNames && employerNames.Count > 0)
                 {
                     // Check for the contract type
                     bool hasFactionContractType = employerNames.TryGetValue(contract.ContractTypeValue.Name, out List<string> employerContractNames);
-                    if (hasFactionContractType)
+                    if (hasFactionContractType && employerContractNames.Count > 0)
                     {
                         Mod.Log.Debug?.Write(" -- Using employer contract type names.");
                         namesToUse = employerContractNames;
@@ -97,7 +97,7 @@ namespace CodeWords.Helper
             if (namesToUse == null)
             {
                 bool hasContractType = Mod.LocalizedText.DefaultNames.TryGetValue(contract.ContractTypeValue.Name, out List<string> defaultTypeNames);
-                if (hasContractType)
+                if (hasContractType && defaultTypeNames.Count > 0)
                 {
                     Mod.Log.Debug?.Write(" -- Using default contract type names.");
                     namesToUse = defaultTypeNames;
@@ -111,8 +111,12 @@ namespace CodeWords.Helper
             }
 
             // Randomly select a name
-            int randomIdx = Mod.Random.Next(0, namesToUse.Count - 1);
-            string codename = namesToUse.ElementAt<string>(randomIdx);
+            string codename = ModConsts.DefaultCodeName;
+            if (namesToUse.Count > 0)
+            {
+                int randomIdx = Mod.Random.Next(0, namesToUse.Count - 1);
+                codename = namesToUse.ElementAt<string>(randomIdx);
+            }
             Mod.Log.Info?.Write($" -- Generated name: {codename}");
 
             return codename;

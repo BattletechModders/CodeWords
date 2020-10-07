@@ -1,54 +1,320 @@
 {
-   "FactionNames" : {
-    "AuriganPirates" : {
-        "AmbushConvoy" : [ "Stopped Traffic", "Traffic Stop", "Arrested Development" ],
-        "Assassinate" : [ "Heads Rolling", "Ignore Senate", "Impaired Leadership" ],
-        "DefendBase" : [ "Infected Limb", "Lanced Boil", "Rusty Ship" ],
-        "DestroyBase" : [ "Shadow Strike", "Burn it down", "Wildfire" ],
-        "CaptureBase" : [ "Dejected Theory", "Diligent Restraint", "Cruel Destiny" ],
-        "CaptureEscort" : [ "Acqusitions Inc.", "Pitched Battle", "Crystal Cathedral" ],
-        "CoopBattle" : [ "Tag Team", "Iron Ring", "Bitter Pill" ],
-        "EscortSingle" : [ "Night Out", "Bodyguard", "Interceptor", "Hawk Eyes" ],
-        "Rescue" : [ "Water Landing", "Alpine Recovery" ],
-        "SimpleBattle" : [ "Iron Fist", "Frozen Hell", "Bison Brawl" ],
-        "ThreeWayBattle" : [ "Menage A Trois", "Three Way Stop", "Traffic Stop" ],
-        "TravelOnly" : [ "Weary Wanderer", "Road Trip" ]
-    },
-    "Marik" : {
-        "AmbushConvoy" : [ "Stopped Traffic", "Traffic Stop", "Arrested Development" ],
-        "Assassinate" : [ "Heads Rolling", "Ignore Senate", "Impaired Leadership" ],
-        "DefendBase" : [ "Infected Limb", "Lanced Boil", "Rusty Ship" ],
-        "DestroyBase" : [ "Shadow Strike", "Burn it down", "Wildfire" ],
-        "CaptureBase" : [ "Dejected Theory", "Diligent Restraint", "Cruel Destiny" ],
-        "CaptureEscort" : [ "Acqusitions Inc.", "Pitched Battle", "Crystal Cathedral" ],
-        "CoopBattle" : [ "Tag Team", "Iron Ring", "Bitter Pill" ],
-        "EscortSingle" : [ "Night Out", "Bodyguard", "Interceptor", "Hawk Eyes" ],
-        "Rescue" : [ "Water Landing", "Alpine Recovery" ],
-        "SimpleBattle" : [ "Iron Fist", "Frozen Hell", "Bison Brawl" ],
-        "ThreeWayBattle" : [ "Menage A Trois", "Three Way Stop", "Traffic Stop" ],
-        "TravelOnly" : [ "Weary Wanderer", "Road Trip" ]
-    }
-   },
-   "DefaultNames" : {
-        "AmbushConvoy" : [ "Stopped Traffic", "Traffic Stop", "Arrested Development",  ],
-        "Assassinate" : [ "Heads Rolling", "Ignore Senate", "Impaired Leadership" ],
-        "DefendBase" : [ "Infected Limb", "Lanced Boil", "Rusty Ship" ],
-        "DestroyBase" : [ "Shadow Strike", "Burn it down", "Wildfire", "Secret Stroke", "Transgression Sincerity" ],
-        "CaptureBase" : [ "Dejected Theory", "Diligent Restraint", "Cruel Destiny", "Average Centipede", "Greater Recklessness", "Engine Workman" ],
-        "CaptureEscort" : [ "Acqusitions Inc.", "Pitched Battle", "Crystal Cathedral",  "Disastrous Quality", "Limited Temptation", "Blue Insincerity" ],
-        "CoopBattle" : [ "Tag Team", "Iron Ring", "Bitter Pill", "Pyre Frustration", "Enthusiasm Goodness", "Inquisitive Trinket" ],
-        "EscortSingle" : [ "Night Out", "Bodyguard", "Interceptor", "Hawk Eyes", "Bleak Contempt", "Rosy Bell", "Indigo Kangaroo" ],
-        "Rescue" : [ "Water Landing", "Alpine Recovery", "Brainy Lake", "Curious Bauble", "Considerable Luxury" ],
-        "SimpleBattle" : [ 
-            "Iron Fist", "Frozen Hell", "Bison Brawl", "Submerged Unicorn", "Engine Loner", "Rough Parrot", 
-            "Countless Jetty", "Dirty Feat", "Dusty Gateway", "Pretty Pain", "Accidental Mariner", "Lucky Bell", "Soldier Sphere", "Eight Stone", "Tawdry Upstart", "Crushed Tavern", 
-            "Morbid Ape", "Muffled Demon", "Low Bird", "Mother Feeling", "Ruddy Road", "Evolution Legality", "Loyalty Table", "Ennui Game", "Fast Ambiguity", "Pink Phalanx"
-        ],
-        "ThreeWayBattle" : [ "Menage A Trois", "Three Way Stop", "Traffic Stop" ],
-        "TravelOnly" : [ "Weary Wanderer", "Road Trip" ]
-   },
-   "FallbackNames" : [
-        "Above the Belt", "Below the Belt", "Arctic Rage", "Furious Assault", "Hidden Threat"
-   ]
+    "ContractNameFormat" : "{0}: {1} {2}",
+    "DefaultContractPrefix" : "Operation",
+    "Adjectives" : [
+        "White", "Black", "Grey", "Red", "Green", "Blue", "Yellow", "Purple", "Orange",
+        "Bright", "Dark", "Twilight", "Sunrise", "Sunset", "Dawn", "Dusk", "Noon", "Midnight",
+        "Mailed", "Union"
+    ],
+    "Nouns" : [
+        "Dog", "Cat", "Bird", "Fish", "Ferret", "Iguana", "Dragon", "Mouse", "Rat", "Tiger", "Lion", "Monkey"
+        "Chieftain", "Kobold", "Liberation", "Fist", "Hold"
+    ],
+    "FactionNames" : {
+        "Davion" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ 
+                "Sovereign Justice",
+                "Matador",
+                "Excalibur",
+                Mandragora",
+                "Solar Shield",
+                "Leopard",
+                "Lion",
+                "Winter Garden",
+                "Roland's Horn",
+                "Rat"
+            ]
+        },
+        "Liao" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ 
+                "Audacity",
+                "Thunderstrike",
+                "Clarity",
+                "Riposte",
+                "
+            ]
+        },
+        "Kurita" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ 
+                "Batu",
+                "Sakkaku",
+                "Broken Blade",
 
+            ]
+        },
+        "Marik" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ 
+                "Guerrero",
+                "Homecoming",
+                "Cookie Jar",
+                "Junk Yard Dog",
+                "Killing Stroke",
+                "Dagger"
+            ]
+        },
+        "Steiner" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ 
+                "Uberschatten",
+                "Almaric",
+                "Hammerfall",
+                "Concentrated Weakness",
+                "Freedom",
+                "Road Runner",
+                "Gotterdammerung"
+            ]
+        },
+        "TaurianConcordat" : {
+            "ContractPrefix" : "Case",
+            "ContractNames" : [ 
+                "Amber",
+                "Black",
+                "Red",
+                "Blue",
+                "White",
+                "Grey",
+                "Green",
+                "Purple",
+                "Yellow",
+                "Orange",
+                "Cyan",
+                "Chartreuse",
+                "Scarlet",
+                "Vermillion",
+                "Aquamarine"
+            ]
+        },
+        "MagistracyOfCanopus" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [
+            ]
+        },
+        "AuriganDirectorate" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ 
+                "Furious Assault",
+                "Hidden Threat",
+                "Settled Score",
+                "Dark Night",
+                "Strategic Vision",
+                "Iron Fist",
+                "Midnight Stand",
+                "Loyalty Table",
+                "Enforced Loyalty",
+                "Loyalty Reminder",
+            ]
+        },
+        "AuriganRestoration" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [
+                "Clean Sweep",
+                "Liberation"
+            ]
+        },
+        "ComStar" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ 
+                "Rosebud",
+                "Divine Intervention",
+                "Case White",
+                "Bird Dog",
+                "Bull Dog",
+                "Damocles",
+                "Odysseus",
+                "Scorpion",
+                "Serpent",
+                "Silver Shield",
+            ]
+        },
+        "AuriganPirates" : {
+            "ContractPrefix" : "Job",
+            "ContractNames" : [ 
+                "Jack 'Em Up",
+                "Yoink",
+                "Furious Road",
+                "Bridge Troll",
+                "Radical Expropriation",
+                "General Bacardi",
+                "Chambered Round",
+                "Shoulda Just Paid",
+                "Make Like McKinley",
+                "It's A Long Way Back",
+                "Hitchhiking",
+                "Blitzkrieg Bop",
+                "Barroom Brawl",
+                "Dirty Pair",
+                "Burn It Down",
+                "Spite and Malice"
+            ]
+        },
+        "Axumite" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "Castile" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "Chainelane" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "ClanBurrock" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ 
+                "Dragonslayer",
+                "Noyan",
+                "Klondike",
+                "SableSun",
+                "SwitchBack"
+
+            ]
+        },
+
+        "ClanCloudCobra" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "ClanCoyote" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "ClanDiamondShark" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "ClanFireMandrill" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "ClanGhostBear" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "ClanGoliathScorpion" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "ClanHellsHorses" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "ClanIceHellion" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "ClanJadeFalcon" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ 
+                "Ice Storm"
+            ]
+        },
+        "ClanNovaCat" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "ClansGeneric" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "ClanSmokeJaguar" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "ClanSnowRaven" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "ClanStarAdder" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "ClanSteelViper" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "ClanWolf" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "Delphi" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "Elysia" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "Hanse" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "Illyrian" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "Ives" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "JarnFolk" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+
+         "Lothian" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "Marian" : {
+            "ContractPrefix" : "Negotium",
+            "ContractNames" : [ 
+                "Equestre Proelium",
+                "Pugna Cultro",
+                "Arduum",
+                "Umbra Bello",
+                "Percute Quietam",
+                "Fides et Indignatio",
+                "In nomine Blake"
+            ]
+        },
+        "Oberon" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "Outworld" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "Rasalhague" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "Tortuga" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ 
+                "Trident"
+            ]
+        },
+        "Valkyrate" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ ]
+        },
+        "WordOfBlake" : {
+            "ContractPrefix" : "Operation",
+            "ContractNames" : [ 
+                "BROKEN FIST",
+                "ICE STORM",
+                "ANGEL REQUIEM",
+                "MEGIDDO",'
+                "SCYTHE",
+                "STEEL HAMMER",
+                "
+            ]
+        }
+    }
 }

@@ -4,37 +4,42 @@ namespace CodeWords
 {
     public class ModText
     {
-        public const string FT_InjuryResist = "INJURY_RESIST";
-
-        public Dictionary<string, string> Floaties = new Dictionary<string, string>
+        public class FactionStrings
         {
-            { FT_InjuryResist, "INJURY RESISTED!" },
+            public string ContractPrefix = "Mission";
+            public List<string> ContractNames = new List<string>();
+        }
+
+        public Dictionary<string, FactionStrings> FactionNames = new Dictionary<string, FactionStrings>()
+        {
+            {
+                "AuriganPirates",
+                new FactionStrings()
+                    {
+                        ContractPrefix = "Job:",
+                        ContractNames = new List<string>()
+                            {
+                                "Jack 'Em Up", "Car Jamming", "Furious Road", "Bridge Troll", "Heads Rolling", "Teenage Lobotomy", "Shoulda Just Paid"
+                            }
+                    }
+                }
         };
 
-        public Dictionary<string, Dictionary<string, List<string>>> FactionNames = new Dictionary<string, Dictionary<string, List<string>>>
+        public List<string> Adjectives = new List<string>()
         {
-
+            "White", "Black", "Grey", "Red", "Green", "Blue", "Yellow", "Purple", "Orange",
+            "Bright", "Dark", "Twilight", "Sunrise", "Sunset", "Dawn", "Dusk", "Noon", "Midnight",
         };
 
-        public Dictionary<string, List<string>> DefaultNames = new Dictionary<string, List<string>>()
+        public List<string> Nouns = new List<string>()
         {
-            {  "AmbushConvoy", new List<string>() { "Stopped Traffic", "Traffic Stop", "Arrested Development" } },
-            {  "Assassinate", new List<string>() { "Heads Rolling", "Ignore Senate", "Impaired Leadership" } },
-            {  "DefendBase", new List<string>() { "Infected Limb", "Lanced Boil", "Rusty Ship" } },
-            {  "DestroyBase", new List<string>() { "Shadow Strike", "Burn it down", "Wildfire" } },
-            {  "CaptureBase", new List<string>() { "Dejected Theory", "Diligent Restraint", "Cruel Destiny" } },
-            {  "CaptureEscort", new List<string>() { "Acqusitions Inc.", "Pitched Battle", "Crystal Cathedral" } },
-            {  "CoopBattle", new List<string>() { "Tag Team", "Iron Ring", "Bitter Pill" } },
-            {  "EscortSingle", new List<string>() { "Night Out", "Bodyguard", "Interceptor", "Hawk Eyes" } },
-            {  "Rescue", new List<string>() { "Water Landing", "Alpine Recovery" } },
-            {  "SimpleBattle", new List<string>() { "Iron Fist", "Frozen Hell", "Bison Brawl" } },
-            {  "ThreeWayBattle", new List<string>() { "Menage A Trois", "Three Way Stop", "Traffic Stop" } },
-            {  "TravelOnly", new List<string>() { "Weary Wanderer", "Road Trip" } },
+            "Dog", "Cat", "Bird", "Fish", "Ferret", "Iguana", "Dragon", "Mouse", "Rat", "Tiger", "Lion", "Monkey"
         };
 
-        public List<string> FallbackNames = new List<string>()
-        {
-            "Above the Belt", "Below the Belt", "Arctic Rage", "Furious Assault", "Hidden Threat"
-        };
+        // 0 = prefix, 1 = adjective, 2 = noun
+        public string ContractNameFormat = "{0}: {1} {2}";
+
+        public string DefaultContractPrefix = "Operation";
+
     }
 }

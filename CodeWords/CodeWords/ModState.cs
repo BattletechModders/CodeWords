@@ -7,6 +7,7 @@ namespace CodeWords {
     public static class ModState {
 
         public static Dictionary<string, string> ContractGUIDToCodeName = new Dictionary<string, string>();
+        public static List<string> NameBlacklist = new List<string>();
         public static string NullGuidCodename = ModConsts.DefaultCodeName;
 
         public static string ActiveContractGUID = null;

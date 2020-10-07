@@ -1,8 +1,10 @@
 ﻿using BattleTech;
+using Localize;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using static CodeWords.ModText;
 
 namespace CodeWords.Helper
 {
@@ -70,56 +72,71 @@ namespace CodeWords.Helper
             return sb.ToString();
         }
 
-        public static string GenerateCodename(Contract contract)
+        static string GenerateRandomName(string prefix)
         {
-            Mod.Log.Info?.Write($"Generating codename for contract: {contract.DebugString()}");
+            // Generate a random name from the adjective and nouns
+            int adjIdx = Mod.Random.Next(0, Mod.LocalizedText.Adjectives.Count - 1);
+            string adjective = Mod.LocalizedText.Adjectives[adjIdx];
+            int nounIdx = Mod.Random.Next(0, Mod.LocalizedText.Nouns.Count - 1);
+            string noun = Mod.LocalizedText.Adjectives[nounIdx];
 
-            // See if there's a faction dictionary first
-            FactionValue employerFaction = contract.GetTeamFaction(ModConsts.EmployerFactionId);
-            Mod.Log.Debug?.Write($"  -- employer is: {employerFaction.Name}  with id: {employerFaction.ID}");
+            string name = new Text(Mod.LocalizedText.ContractNameFormat, new object[] { prefix, adjective, noun }).ToString();
+            Mod.Log.Debug?.Write($"Generated name: {name}");
 
-            List<string> namesToUse = null;
-            if (!String.IsNullOrEmpty(employerFaction.Name))
+            return name;
+        }
+
+        public static string GenerateCodename(string employerFactionName)
+        {
+            Mod.Log.Info?.Write($"Generating codename for contract with employerName: {employerFactionName}");
+
+            List<string> names = new List<string>(10);
+
+            // See if there are any factional names to add
+            int factionNameCount = (int)Math.Floor(Mod.Config.FactionNameWeight * 10);
+            string prefix = Mod.LocalizedText.DefaultContractPrefix;
+            if (!string.IsNullOrEmpty(employerFactionName))
             {
-                bool hasFactionNames = Mod.LocalizedText.FactionNames.TryGetValue(employerFaction.Name, out Dictionary<string, List<string>> employerNames);
-                if (hasFactionNames && employerNames.Count > 0)
+                bool hasFaction = Mod.LocalizedText.FactionNames.TryGetValue(employerFactionName, out FactionStrings employerStrings);
+                if (hasFaction)
                 {
-                    // Check for the contract type
-                    bool hasFactionContractType = employerNames.TryGetValue(contract.ContractTypeValue.Name, out List<string> employerContractNames);
-                    if (hasFactionContractType && employerContractNames.Count > 0)
+                    if (!string.IsNullOrEmpty(employerStrings.ContractPrefix)) prefix = employerStrings.ContractPrefix;
+
+                    List<string> fNames = new List<string>();
+                    fNames.AddRange(employerStrings.ContractNames);
+                    
+                    if (factionNameCount > employerStrings.ContractNames.Count) factionNameCount = employerStrings.ContractNames.Count;
+                    Mod.Log.Debug?.Write($" -- Will generate {factionNameCount} factionNames");
+                    for (int i = 0; i < factionNameCount; i++)
                     {
-                        Mod.Log.Debug?.Write(" -- Using employer contract type names.");
-                        namesToUse = employerContractNames;
+                        int fNameIdx = Mod.Random.Next(fNames.Count - 1);
+                        string fName = fNames.ElementAt(fNameIdx);
+                        if (!string.IsNullOrEmpty(fName)) names.Add(fName);
+                        fNames.RemoveAt(fNameIdx);
                     }
                 }
             }
+            Mod.Log.Debug?.Write($" -- Contract prefix: {prefix}");
 
-            if (namesToUse == null)
+            // Build generic names next
+            int genericNameCount = 10 - names.Count;
+            Mod.Log.Debug?.Write($" -- Will generate {genericNameCount} generic names.");
+            for (int i = 0; i < genericNameCount; i++)
             {
-                bool hasContractType = Mod.LocalizedText.DefaultNames.TryGetValue(contract.ContractTypeValue.Name, out List<string> defaultTypeNames);
-                if (hasContractType && defaultTypeNames.Count > 0)
-                {
-                    Mod.Log.Debug?.Write(" -- Using default contract type names.");
-                    namesToUse = defaultTypeNames;
-                }
+                names.Add(GenerateRandomName(prefix));
             }
 
-            if (namesToUse == null)
+            // Check names for a repeat
+            string generatedName = ModConsts.DefaultCodeName;
+            names.Shuffle();
+            foreach (string name in names)
             {
-                Mod.Log.Debug?.Write(" -- Using fallback names");
-                namesToUse = Mod.LocalizedText.FallbackNames;
+                if (ModState.NameBlacklist.Contains(name)) continue;
+                generatedName = name;
+                break;
             }
 
-            // Randomly select a name
-            string codename = ModConsts.DefaultCodeName;
-            if (namesToUse.Count > 0)
-            {
-                int randomIdx = Mod.Random.Next(0, namesToUse.Count - 1);
-                codename = namesToUse.ElementAt<string>(randomIdx);
-            }
-            Mod.Log.Info?.Write($" -- Generated name: {codename}");
-
-            return codename;
+            return generatedName;
         }
 
         public static string GetOrCreateCodename(Contract contract)
@@ -131,13 +148,28 @@ namespace CodeWords.Helper
             bool hasKey = ModState.ContractGUIDToCodeName.TryGetValue(cacheKey, out codename);
             if (!hasKey)
             {
-                codename = GenerateCodename(contract);
+                FactionValue employerFaction = contract.GetTeamFaction(ModConsts.EmployerFactionId);
+                codename = GenerateCodename(employerFaction.Name);
                 ModState.ContractGUIDToCodeName.Add(cacheKey, codename);
+                ModState.NameBlacklist.Add(codename);
             }
 
             return codename;
         }
 
+        // Do a Fisher-Yates shuffle; see https://stackoverflow.com/questions/273313/randomize-a-listt
+        public static void Shuffle<T>(this IList<T> list)
+        {
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = Mod.Random.Next(n + 1);
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
+        }
 
     }
 }

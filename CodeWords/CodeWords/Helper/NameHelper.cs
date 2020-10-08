@@ -75,13 +75,13 @@ namespace CodeWords.Helper
         static string GenerateRandomName(string prefix)
         {
             // Generate a random name from the adjective and nouns
-            int adjIdx = Mod.Random.Next(0, Mod.LocalizedText.Adjectives.Count - 1);
+            int adjIdx = Mod.Random.Next(Mod.LocalizedText.Adjectives.Count - 1);
             string adjective = Mod.LocalizedText.Adjectives[adjIdx];
-            int nounIdx = Mod.Random.Next(0, Mod.LocalizedText.Nouns.Count - 1);
+            int nounIdx = Mod.Random.Next(Mod.LocalizedText.Nouns.Count - 1);
             string noun = Mod.LocalizedText.Adjectives[nounIdx];
 
             string name = new Text(Mod.LocalizedText.ContractNameFormat, new object[] { prefix, adjective, noun }).ToString();
-            Mod.Log.Debug?.Write($"Generated name: {name}");
+            Mod.Log.Debug?.Write($"Generated name: {name} from adjective: {adjective} and noun: {noun}");
 
             return name;
         }

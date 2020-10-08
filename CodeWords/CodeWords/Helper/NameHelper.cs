@@ -111,7 +111,11 @@ namespace CodeWords.Helper
                     {
                         int fNameIdx = Mod.Random.Next(fNames.Count - 1);
                         string fName = fNames.ElementAt(fNameIdx);
-                        if (!string.IsNullOrEmpty(fName)) names.Add(fName);
+                        if (!string.IsNullOrEmpty(fName))
+                        {
+                            string name = new Text(Mod.LocalizedText.ContractNameFormat, new object[] { prefix, "", fName}).ToString();
+                            names.Add(name);
+                        }
                         fNames.RemoveAt(fNameIdx);
                     }
                 }

@@ -17,13 +17,20 @@
                 "Sovereign Justice",
                 "Matador",
                 "Excalibur",
-                Mandragora",
+                "Mandragora",
                 "Solar Shield",
                 "Leopard",
                 "Lion",
                 "Winter Garden",
                 "Roland's Horn",
-                "Rat"
+                "Rat",
+                "Lancelot",
+                "Arthur",
+                "Merlin",
+                "Durandal",
+                "Brave Defender",
+                "Stalwart Shield",
+                "Blackheart",
             ]
         },
         "Liao" : {
@@ -33,7 +40,15 @@
                 "Thunderstrike",
                 "Clarity",
                 "Riposte",
-                "
+                "Distant Thunder",
+                "Danger Canyon",
+                "Knife Edge",
+                "Eagle Eye",
+                "Combat Shadow",
+                "Fast Ambiguity",
+                 "Interceptor",
+                "Hawk Eyes",
+                "Phoenix Shell"
             ]
         },
         "Kurita" : {
@@ -42,7 +57,14 @@
                 "Batu",
                 "Sakkaku",
                 "Broken Blade",
-
+                "Diligent Restraint",
+                "Diligent Warrior",
+                "Combat Shadow",
+                "Echo Mountain",
+                "Blue Sky",
+                "Honor Guard",
+                "Shadow Strike",
+                "Phoenix Shell"
             ]
         },
         "Marik" : {
@@ -53,7 +75,16 @@
                 "Cookie Jar",
                 "Junk Yard Dog",
                 "Killing Stroke",
-                "Dagger"
+                "Dagger",
+                "Blackheart",
+                "Colossus",
+                "Bustout",
+                "Crossfire",
+                "Channel Finder",
+                "Fight Club",
+                "Surgical Strike",
+                "Extrajudicial",
+                "Arrested Development"
             ]
         },
         "Steiner" : {
@@ -65,7 +96,20 @@
                 "Concentrated Weakness",
                 "Freedom",
                 "Road Runner",
-                "Gotterdammerung"
+                "Gotterdammerung",
+                "Eight Stone",
+                "Added Force",
+                "Joint Exercise",
+                "No Man's Land",
+                "Castle Doctrine",
+                "Homeland Security",
+                "Citadel",
+                "Impaired Leadership",
+                "Hand of Doom",
+                "Transfer of Power",
+                "Overwhelming Force",
+                "Complete Destruction",
+                "Incredible Restraint"
             ]
         },
         "TaurianConcordat" : {
@@ -89,12 +133,25 @@
             ]
         },
         "MagistracyOfCanopus" : {
-            "ContractPrefix" : "Operation",
+            "ContractPrefix" : "Task",
             "ContractNames" : [
+                "Above the Belt",
+                "Below the Belt",
+                "Hard Border",
+                "Airgap",
+                "Northern Light",
+                "Center of Mass",
+                "Coliseum",
+                "Curious Bauble",
+                "Considerable Luxury",
+                "Enthusiasm Goodness",
+                "Friendly Faces",
+                "Acqusitions Inc.",
+                "Limited Temptation"
             ]
         },
         "AuriganDirectorate" : {
-            "ContractPrefix" : "Operation",
+            "ContractPrefix" : "Enforcement",
             "ContractNames" : [ 
                 "Furious Assault",
                 "Hidden Threat",
@@ -102,17 +159,31 @@
                 "Dark Night",
                 "Strategic Vision",
                 "Iron Fist",
+                "Steel Guard",
+                "Iron Wall",
+                "Steel Fence",
+                "Pure Blood",
+                "Purity of Thought",
+                "Unity through Action",
+                "Dissent Dispersion",
                 "Midnight Stand",
                 "Loyalty Table",
                 "Enforced Loyalty",
-                "Loyalty Reminder",
+                "Loyalty Reminder"
             ]
         },
         "AuriganRestoration" : {
             "ContractPrefix" : "Operation",
             "ContractNames" : [
                 "Clean Sweep",
-                "Liberation"
+                "Liberation",
+                "Eager Initiative",
+                "Project Grace",
+                "Joint Venture",
+                "Stand Together",
+                "Quiet Front",
+                "Silent Spring",
+                "Elegant Lady",
             ]
         },
         "ComStar" : {
@@ -148,20 +219,66 @@
                 "Barroom Brawl",
                 "Dirty Pair",
                 "Burn It Down",
-                "Spite and Malice"
+                "Spite and Malice",
+                "Beat on the Brat",
+                "Menage A Trois"
             ]
         },
         "Axumite" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Transgression Sincerity",
+                "Constant Watch",
+                "Echo Mountain",
+                "Holidays in the Sun",
+                "End of the Line",
+                "Twenty Paces",
+                "Name Variant"
+            ]
         },
         "Castile" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Dejected Theory",
+                "Average Centipede",
+                "Roadside Assistance",
+                "Inquisitive Trinket",
+                "Disastrous Quality",
+                "Blue Insincerity",
+                "Greater Recklessness",
+                "Chambered Round",
+                "Traffic Stop",
+                "Deep State",
+                "Indigo Anvil",
+                "Storm The Bastille",
+                "3rd Precinct",
+                "Sleeping Village",
+                "Threatened Entourage",
+                "Surgical Strike",
+                "Moving Target"
+            ]
         },
         "Chainelane" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Dejected Theory",
+                "Average Centipede",
+                "Roadside Assistance",
+                "Inquisitive Trinket",
+                "Disastrous Quality",
+                "Blue Insincerity",
+                "Greater Recklessness",
+                "Chambered Round",
+                "Traffic Stop",
+                "Deep State",
+                "Indigo Anvil",
+                "Storm The Bastille",
+                "3rd Precinct",
+                "Sleeping Village",
+                "Threatened Entourage",
+                "Surgical Strike",
+                "Moving Target"
+            ]
         },
         "ClanBurrock" : {
             "ContractPrefix" : "Operation",
@@ -170,105 +287,491 @@
                 "Noyan",
                 "Klondike",
                 "SableSun",
-                "SwitchBack"
-
+                "SwitchBack",
+                "Arctic Rage",
+                "Deep Stare",
+                "Muffled Demon",
+                "Bleak Contempt",
+                "Cruel Destiny",
+                "Falcon Nest",
+                "Fair Fight",
+                "Data Scope",
+                "Credible Threat",
+                "Decapitation",
+                "Righteous Claim"
             ]
         },
-
         "ClanCloudCobra" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Dragonslayer",
+                "Noyan",
+                "Klondike",
+                "SableSun",
+                "SwitchBack",
+                "Arctic Rage",
+                "Deep Stare",
+                "Muffled Demon",
+                "Bleak Contempt",
+                "Cruel Destiny",
+                "Falcon Nest",
+                "Fair Fight",
+                "Data Scope",
+                "Credible Threat",
+                "Decapitation",
+                "Righteous Claim"
+            ]
         },
         "ClanCoyote" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Dragonslayer",
+                "Noyan",
+                "Klondike",
+                "SableSun",
+                "SwitchBack",
+                "Arctic Rage",
+                "Deep Stare",
+                "Muffled Demon",
+                "Bleak Contempt",
+                "Cruel Destiny",
+                "Falcon Nest",
+                "Fair Fight",
+                "Data Scope",
+                "Credible Threat",
+                "Decapitation",
+                "Righteous Claim"
+            ]
         },
         "ClanDiamondShark" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Dragonslayer",
+                "Noyan",
+                "Klondike",
+                "SableSun",
+                "SwitchBack",
+                "Arctic Rage",
+                "Deep Stare",
+                "Muffled Demon",
+                "Bleak Contempt",
+                "Cruel Destiny",
+                "Falcon Nest",
+                "Fair Fight",
+                "Data Scope",
+                "Credible Threat",
+                "Decapitation",
+                "Righteous Claim"
+            ]
         },
         "ClanFireMandrill" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Dragonslayer",
+                "Noyan",
+                "Klondike",
+                "SableSun",
+                "SwitchBack",
+                "Arctic Rage",
+                "Deep Stare",
+                "Muffled Demon",
+                "Bleak Contempt",
+                "Cruel Destiny",
+                "Falcon Nest",
+                "Fair Fight",
+                "Data Scope",
+                "Credible Threat",
+                "Decapitation",
+                "Righteous Claim"
+            ]
         },
         "ClanGhostBear" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Dragonslayer",
+                "Noyan",
+                "Klondike",
+                "SableSun",
+                "SwitchBack",
+                "Arctic Rage",
+                "Deep Stare",
+                "Muffled Demon",
+                "Bleak Contempt",
+                "Cruel Destiny",
+                "Falcon Nest",
+                "Fair Fight",
+                "Data Scope",
+                "Credible Threat",
+                "Decapitation",
+                "Righteous Claim"
+            ]
         },
         "ClanGoliathScorpion" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Dragonslayer",
+                "Noyan",
+                "Klondike",
+                "SableSun",
+                "SwitchBack",
+                "Arctic Rage",
+                "Deep Stare",
+                "Muffled Demon",
+                "Bleak Contempt",
+                "Cruel Destiny",
+                "Falcon Nest",
+                "Fair Fight",
+                "Data Scope",
+                "Credible Threat",
+                "Decapitation",
+                "Righteous Claim"
+            ]
         },
         "ClanHellsHorses" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Dragonslayer",
+                "Noyan",
+                "Klondike",
+                "SableSun",
+                "SwitchBack",
+                "Arctic Rage",
+                "Deep Stare",
+                "Muffled Demon",
+                "Bleak Contempt",
+                "Cruel Destiny",
+                "Falcon Nest",
+                "Fair Fight",
+                "Data Scope",
+                "Credible Threat",
+                "Decapitation",
+                "Righteous Claim"
+            ]
         },
         "ClanIceHellion" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Dragonslayer",
+                "Noyan",
+                "Klondike",
+                "SableSun",
+                "SwitchBack",
+                "Arctic Rage",
+                "Deep Stare",
+                "Muffled Demon",
+                "Bleak Contempt",
+                "Cruel Destiny",
+                "Falcon Nest",
+                "Fair Fight",
+                "Data Scope",
+                "Credible Threat",
+                "Decapitation",
+                "Righteous Claim"
+            ]
         },
         "ClanJadeFalcon" : {
             "ContractPrefix" : "Operation",
             "ContractNames" : [ 
-                "Ice Storm"
+                "Ice Storm",
+                "Dragonslayer",
+                "Noyan",
+                "Klondike",
+                "SableSun",
+                "SwitchBack",
+                "Arctic Rage",
+                "Deep Stare",
+                "Muffled Demon",
+                "Bleak Contempt",
+                "Cruel Destiny",
+                "Falcon Nest",
+                "Fair Fight",
+                "Data Scope",
+                "Credible Threat",
+                "Decapitation",
+                "Righteous Claim"
             ]
         },
         "ClanNovaCat" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Dragonslayer",
+                "Noyan",
+                "Klondike",
+                "SableSun",
+                "SwitchBack",
+                "Arctic Rage",
+                "Deep Stare",
+                "Muffled Demon",
+                "Bleak Contempt",
+                "Cruel Destiny",
+                "Falcon Nest",
+                "Fair Fight",
+                "Data Scope",
+                "Credible Threat",
+                "Decapitation",
+                "Righteous Claim"
+            ]
         },
         "ClansGeneric" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Dragonslayer",
+                "Noyan",
+                "Klondike",
+                "SableSun",
+                "SwitchBack",
+                "Arctic Rage",
+                "Deep Stare",
+                "Muffled Demon",
+                "Bleak Contempt",
+                "Cruel Destiny",
+                "Falcon Nest",
+                "Fair Fight",
+                "Data Scope",
+                "Credible Threat",
+                "Decapitation",
+                "Righteous Claim"
+            ]
         },
         "ClanSmokeJaguar" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Dragonslayer",
+                "Noyan",
+                "Klondike",
+                "SableSun",
+                "SwitchBack",
+                "Arctic Rage",
+                "Deep Stare",
+                "Muffled Demon",
+                "Bleak Contempt",
+                "Cruel Destiny",
+                "Falcon Nest",
+                "Fair Fight",
+                "Data Scope",
+                "Credible Threat",
+                "Decapitation",
+                "Righteous Claim"
+            ]
         },
         "ClanSnowRaven" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Dragonslayer",
+                "Noyan",
+                "Klondike",
+                "SableSun",
+                "SwitchBack",
+                "Arctic Rage",
+                "Deep Stare",
+                "Muffled Demon",
+                "Bleak Contempt",
+                "Cruel Destiny",
+                "Falcon Nest",
+                "Fair Fight",
+                "Data Scope",
+                "Credible Threat",
+                "Decapitation",
+                "Righteous Claim"
+            ]
         },
         "ClanStarAdder" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Dragonslayer",
+                "Noyan",
+                "Klondike",
+                "SableSun",
+                "SwitchBack",
+                "Arctic Rage",
+                "Deep Stare",
+                "Muffled Demon",
+                "Bleak Contempt",
+                "Cruel Destiny",
+                "Falcon Nest",
+                "Fair Fight",
+                "Data Scope",
+                "Credible Threat",
+                "Decapitation",
+                "Righteous Claim"
+            ]
         },
         "ClanSteelViper" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Dragonslayer",
+                "Noyan",
+                "Klondike",
+                "SableSun",
+                "SwitchBack",
+                "Arctic Rage",
+                "Deep Stare",
+                "Muffled Demon",
+                "Bleak Contempt",
+                "Cruel Destiny",
+                "Falcon Nest",
+                "Fair Fight",
+                "Data Scope",
+                "Credible Threat",
+                "Decapitation",
+                "Righteous Claim"
+            ]
         },
         "ClanWolf" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Dragonslayer",
+                "Noyan",
+                "Klondike",
+                "SableSun",
+                "SwitchBack",
+                "Arctic Rage",
+                "Deep Stare",
+                "Muffled Demon",
+                "Bleak Contempt",
+                "Cruel Destiny",
+                "Falcon Nest",
+                "Fair Fight",
+                "Data Scope",
+                "Credible Threat",
+                "Decapitation",
+                "Righteous Claim"
+            ]
         },
         "Delphi" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Camel Hump",
+                "Guidepost",
+                "Wildfire",
+                "Secret Stroke",
+                "Cornerstone",
+                "Peace Ultra",
+                "Ignore Senate",
+                "Plausible Deniability",
+                "Stopped Traffic",
+                "Checkpoint",
+                "Revolution Rock",
+                "Ended Leadership"
+            ]
         },
         "Elysia" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Dejected Theory",
+                "Average Centipede",
+                "Roadside Assistance",
+                "Inquisitive Trinket",
+                "Disastrous Quality",
+                "Blue Insincerity",
+                "Greater Recklessness",
+                "Chambered Round",
+                "Traffic Stop",
+                "Deep State",
+                "Indigo Anvil",
+                "Storm The Bastille",
+                "3rd Precinct",
+                "Sleeping Village",
+                "Threatened Entourage",
+                "Surgical Strike",
+                "Moving Target"
+            ]
         },
         "Hanse" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+            "Dynamic Quarantine",
+            "Radiant Hail",
+            "Submerged Unicorn",
+            "Engine Loner",
+            "Rough Parrot",
+            "Bell Weather",
+            "Balance Iron",
+            "Accidental Mariner",
+            "Lucky Bell",
+            "Crushed Tavern",
+            "Water Landing",
+            "Brainy Lake",
+            "Packaged Goods",
+            "Hidden Treasure",
+            "Rusty Ship",
+            "Sailin' On",
+            "Planet Caravan",
+            "Countless Jetty",
+            "Customs Check"
+            ]
         },
         "Illyrian" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Dejected Theory",
+                "Average Centipede",
+                "Roadside Assistance",
+                "Inquisitive Trinket",
+                "Disastrous Quality",
+                "Blue Insincerity",
+                "Greater Recklessness",
+                "Chambered Round",
+                "Traffic Stop",
+                "Deep State",
+                "Indigo Anvil",
+                "Storm The Bastille",
+                "3rd Precinct",
+                "Sleeping Village",
+                "Threatened Entourage",
+                "Surgical Strike",
+                "Moving Target"
+            ]
         },
         "Ives" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Tale of Two Cities",
+                "Three Way Stop",
+                "Mother Feeling",
+                "Evolution Legality",
+                "Ennui Game",
+                "Urgent Extraction",
+                "Taxi Service",
+                "Retirement Party",
+                "Four Horsemen",
+                "End Run",
+                "Stopped Traffic",
+                "Arrested Development",
+                "Country Mile"
+            ]
         },
         "JarnFolk" : {
-            "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractPrefix" : "Saga",
+            "ContractNames" : [ 
+            .   "Einherjar",
+                "Heidrek & Tyrfing",
+                "Hervor's Tale",
+                "Hrothgar's Legacy",
+                "Ingeld's Faith",
+                "Chief Palnatoke",
+                "Sigi and Rerir",
+                "Starkad",
+                "Yrsa"
+            ]
         },
-
          "Lothian" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Haunted House",
+                "Occulted",
+                "Semio Taxonomy",
+                "Indigo Anvil",
+                "Bodyguard",
+                "Indigo Kangaroo",
+                "Pink Phalanx",
+                "Crystal Cathedral",
+                "Engine Workman",
+                "Criss Cross",
+                "Executioner's Song",
+                "Country Mile",
+                "Customs Check"
+            ]
         },
         "Marian" : {
             "ContractPrefix" : "Negotium",
@@ -279,30 +782,108 @@
                 "Umbra Bello",
                 "Percute Quietam",
                 "Fides et Indignatio",
-                "In nomine Blake"
+                "In nomine O'Reilly",
+                "Vigilia Noctis",
+                "Callidum Consilium",
+                "Effrenem Tantorum",
             ]
         },
         "Oberon" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Pretty Pain",
+                "Double Arrow",
+                "Soldier Sphere",
+                "Linchpin",
+                "Nightwatch",
+                "Heads Rolling",
+                "End Run",
+                "Threatened Entourage",
+                "Judge, Jury, and",
+                "Dead or Alive",
+                "Fight Club",
+                "Colossus",
+                "Ours Now",
+                "Extrajudicial",
+                "Retirement Party"
+            ]
         },
         "Outworld" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Gunslinger",
+                "Elegant Lady",
+                "Settled Score",
+                "Eagle Eye",
+                "Forward to Death"
+                "Burning Down the House",
+                "Guns of Brixton",
+                "Last Stand",
+                "Guns Blazing",
+                "Squatters' Rights"
+                "Straight to Hell",
+                "Teenage Lobotomy"
+            ]
         },
         "Rasalhague" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [ 
+                "Frozen Blossoms",
+                "Silent Contemplation",
+                "Berserk Tranquility",
+                "Dual Axe Samurai",
+                "Sunrise over Mountains",
+                "Beard of Discipline",
+                "Hulking Essence",
+                "Soul of the Frost Dragon",
+            ]
         },
         "Tortuga" : {
-            "ContractPrefix" : "Operation",
+            "ContractPrefix" : "Opportunity",
             "ContractNames" : [ 
-                "Trident"
+                "Trident",
+                "Just Another Job"
+                "Gunslinger",
+                "Dirty Pair",
+                "Chicken Little",
+                "Party Crasher",
+                "Night Out",
+                "Dirty Feat",
+                "Dusty Gateway",
+                "Bitter Pill",
+                "Pyre Frustration",
+                "Pit Stop",
+                "Slugfest",
+                "Ghetto Defendant",
+                "Securicor"
             ]
         },
         "Valkyrate" : {
             "ContractPrefix" : "Operation",
-            "ContractNames" : [ ]
+            "ContractNames" : [
+                "Curveball",
+                "Frozen Hell",
+                "Blowtorch",
+                "Tawdry Upstart",
+                "Morbid Ape",
+                "Low Bird",
+                "Ruddy Road",
+                "Rosy Bell",
+                "Crew Bravo",
+                "Tag Team",
+                "Iron Ring",
+                "Briar Patch",
+                "Fire Proof",
+                "Home Alone",
+                "Burning Sentry",
+                "End of the Line",
+                "Moving Target",
+                "Bustout",
+                "Cretin Hop",
+                "Heads Rolling",
+                "Ignore Laws",
+                "Pit Stop"
+            ]
         },
         "WordOfBlake" : {
             "ContractPrefix" : "Operation",
@@ -313,7 +894,12 @@
                 "MEGIDDO",'
                 "SCYTHE",
                 "STEEL HAMMER",
-                "
+                "RIGHTEOUS FURY",
+                "PURGE",
+                "HATRED",
+                "PURITY",
+                "DECIMATION",
+                "SPITE"
             ]
         }
     }

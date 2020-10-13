@@ -78,7 +78,7 @@ namespace CodeWords.Helper
             int adjIdx = Mod.Random.Next(Mod.LocalizedText.Adjectives.Count - 1);
             string adjective = Mod.LocalizedText.Adjectives[adjIdx];
             int nounIdx = Mod.Random.Next(Mod.LocalizedText.Nouns.Count - 1);
-            string noun = Mod.LocalizedText.Adjectives[nounIdx];
+            string noun = Mod.LocalizedText.Nouns[nounIdx];
 
             string name = new Text(Mod.LocalizedText.ContractNameFormat, new object[] { prefix, adjective, noun }).ToString();
             Mod.Log.Debug?.Write($"Generated name: {name} from adjective: {adjective} and noun: {noun}");

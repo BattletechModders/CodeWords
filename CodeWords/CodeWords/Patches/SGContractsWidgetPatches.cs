@@ -26,22 +26,12 @@ namespace CodeWords.Patches
         {
             Mod.Log.Trace?.Write("SGCW:PC entered.");
 
-            string codeName = NameHelper.GetOrCreateCodename(contract);
-
-            //if (contract != null && !String.IsNullOrEmpty(contract.GUID))
-            //{
-            //    Mod.Log.Debug?.Write($"SGCW:PC Populating details for contract: {contract.DebugString()}");
-            //    codeName = NameHelper.GetOrCreateCodename(contract);
-            //}
-            //else if (!String.IsNullOrEmpty(ModState.ActiveContractGUID))
-            //{
-            //    Mod.Log.Debug?.Write($"SGCW:PC looking up contract with GUID: {ModState.ActiveContractGUID}");
-            //    bool hasCodename = ModState.ContractGUIDToCodeName.TryGetValue(ModState.ActiveContractGUID, out codeName);
-            //    if (!hasCodename) codeName = ModConsts.DefaultCodeName;
-            //}
-
-            Mod.Log.Debug?.Write($"SGCW:PC setting codename to: {codeName}");
-            ___MetaMissionTitleField.SetText(codeName);
+            if (contract.CanHaveCodename())
+            {
+                string codeName = NameHelper.GetOrCreateCodename(contract);
+                Mod.Log.Debug?.Write($"SGCW:PC setting codename to: {codeName}");
+                ___MetaMissionTitleField.SetText(codeName);
+            }
         }
     }
 
@@ -54,11 +44,13 @@ namespace CodeWords.Patches
 
             Mod.Log.Debug?.Write($"SGCW:SDC Populating details for contract: {desiredContract.DebugString()}");
 
-            string codeName = NameHelper.GetOrCreateCodename(desiredContract);
-            Mod.Log.Debug?.Write($"SGCW:SDC setting codename to: {codeName}");
-            ___MetaMissionTitleField.SetText(codeName);
-
-            ModState.ActiveContractGUID = desiredContract.GUID;
+            if (desiredContract.CanHaveCodename())
+            {
+                string codeName = NameHelper.GetOrCreateCodename(desiredContract);
+                Mod.Log.Debug?.Write($"SGCW:SDC setting codename to: {codeName}");
+                ___MetaMissionTitleField.SetText(codeName);
+                ModState.ActiveContractGUID = desiredContract.GUID;
+            }
         }
     }
 }

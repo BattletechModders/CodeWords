@@ -15,25 +15,14 @@ namespace CodeWords.Patches
             Mod.Log.Trace?.Write("SGCLI:I entered.");
             Mod.Log.Debug?.Write($"SGCLI:I => {contract.DebugString()}");
 
-            string codeName = ModConsts.DefaultCodeName;
-            //if (contract.Override != null && contract.Override.travelSeed != 0)
-            //{
-            //    // We are a travel contract, see if we can find the contract by the cache key first
-            //    if (String.IsNullOrEmpty(ModState.NullGuidCodename))
-            //    {
-            //        ModState.NullGuidCodename = NameHelper.GenerateCodename(contract);
-            //    }
-            //    Mod.Log.Debug?.Write("Using null GUID codename for travel contract.");
-            //    codeName = ModState.NullGuidCodename;
-            //}
-            //else
-            //{
-            //    codeName = NameHelper.GetOrCreateCodename(contract);
-            //}
-            codeName = NameHelper.GetOrCreateCodename(contract);
+            if (contract.CanHaveCodename())
+            {
+                string codeName = ModConsts.DefaultCodeName;
+                codeName = NameHelper.GetOrCreateCodename(contract);
 
-            Mod.Log.Debug?.Write($"SGCLI setting codename to: {codeName}");
-            ___contractName.SetText(codeName);
+                Mod.Log.Debug?.Write($"SGCLI setting codename to: {codeName}");
+                ___contractName.SetText(codeName);
+            }
         }
     }
 }

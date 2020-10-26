@@ -8,8 +8,45 @@ using static CodeWords.ModText;
 
 namespace CodeWords.Helper
 {
+    public static class ContractExtensions
+    {
+        public static bool CanHaveCodename(this Contract contract)
+        {
+            if (contract != null)
+            {
+                // Check for default exclusiosn; no flashpoints, story contracts, tutorials, etc
+                if (contract.IsFlashpointCampaignContract ||
+                    contract.IsFlashpointContract ||
+                    contract.IsStoryContract ||
+                    contract.IsTutorial ||
+                    contract.IsRestorationContract)
+                {
+                    Mod.Log.Info?.Write($"Contract is of an excluded type, cannot use a codename.");
+                    return false;
+                }
+
+                // Check for contract name exclusion
+                if (contract.Override != null)
+                {
+                    foreach (string excluded in Mod.Config.ExcludeContractsNamed)
+                    {
+                        if (excluded.Equals(contract.Override.contractName, StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            Mod.Log.Info?.Write($"Found codename exclusions for contract name: {contract.Override.contractName}, skipping.");
+                            return false;
+                        }
+                    }
+                }
+            }
+
+            Mod.Log.Debug?.Write($"No exclusions found for contract: '{contract?.Override?.contractName}', enabling codenames.");
+            return true;
+        }
+    }
+
     public static class NameHelper
     {
+
         public static string DebugString(this Contract contract)
         {
             StringBuilder sb = new StringBuilder();

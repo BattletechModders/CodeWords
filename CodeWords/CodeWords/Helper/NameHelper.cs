@@ -28,18 +28,18 @@ namespace CodeWords.Helper
                 // Check for contract name exclusion
                 if (contract.Override != null)
                 {
-                    foreach (string excluded in Mod.Config.ExcludeContractsNamed)
+                    foreach (string excluded in Mod.Config.ExcludeContractsWithId)
                     {
-                        if (excluded.Equals(contract.Override.contractName, StringComparison.InvariantCultureIgnoreCase))
+                        if (excluded.Equals(contract.Override.ID, StringComparison.InvariantCultureIgnoreCase))
                         {
-                            Mod.Log.Info?.Write($"Found codename exclusions for contract name: {contract.Override.contractName}, skipping.");
+                            Mod.Log.Info?.Write($"Found codename exclusions for contractID: {contract.Override.ID}, skipping.");
                             return false;
                         }
                     }
                 }
             }
 
-            Mod.Log.Debug?.Write($"No exclusions found for contract: '{contract?.Override?.contractName}', enabling codenames.");
+            Mod.Log.Debug?.Write($"No exclusions found for contractID: '{contract?.Override?.ID}', enabling codenames.");
             return true;
         }
     }

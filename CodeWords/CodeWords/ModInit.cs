@@ -39,6 +39,7 @@ namespace CodeWords {
 
             Log.Debug?.Write($"ModDir is:{modDirectory}");
             Log.Debug?.Write($"mod.json settings are:({settingsJSON})");
+            Mod.Config.Init();
             Mod.Config.LogConfig();
 
             if (settingsE != null) {

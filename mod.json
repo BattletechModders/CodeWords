@@ -1,7 +1,7 @@
 {
   "Name": "CodeWords",
   "Enabled": true,
-  "Version": "0.4.0",
+  "Version": "1.0.0",
   "Description": "Randomizes and obfuscates contract names",
   "Author": "IceRaptor",
   "Website": "https://github.com/IceRaptor/CodeWords",
@@ -14,7 +14,7 @@
     "Debug": true,
     "Trace": false,
     "FactionNameWeight": 0.2,
-    "ExcludedContractTypes": [
+    "ExcludeContractsWithId": [
       "itrom_attack",
       "itrom_defense",
       "panzyr_attack",

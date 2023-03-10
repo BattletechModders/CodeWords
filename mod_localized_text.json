@@ -1331,6 +1331,11 @@
                 "DECIMATION",
                 "SPITE"
             ]
-        }
+        },
+		"SpecificContractPrefixes": {
+			"Engagement": [
+				"c_ExampleContract"
+			]
+		}
     }
 }

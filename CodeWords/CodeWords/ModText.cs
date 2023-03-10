@@ -25,6 +25,18 @@ namespace CodeWords
                 }
         };
 
+        public Dictionary<string, List<string>> SpecificContractPrefixes = new Dictionary<string, List<string>>()
+        {
+            {
+                "Engagement",
+                    new List<string>()
+                    {
+                        "c_ExampleContract"
+                    }
+
+                }
+        };
+
         public List<string> Adjectives = new List<string>()
         {
             "White", "Black", "Grey", "Red", "Green", "Blue", "Yellow", "Purple", "Orange",

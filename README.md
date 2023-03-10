@@ -26,4 +26,5 @@ Contract names are configured in the `mod_localized_text.json` file in the mod d
 | FactionNames | A dictionary linking factionIDs to faction-specific configurations. Elements in this dictionary must be a Javascript object with the FactionID.ContractPrefix and FactionID.ContractNames element (see below) | See `mod_localized_text.json` |
 | *FactionID.ContractPrefix* | The prefix that will be used for *ALL* contracts from this faction. | Operation |
 | *FactionID.ContractNames* | The list of faction-specific contract names that will be used when a randomly rolled value is less than *FactionNameWeight* for a given contract (see above) | See `mod_localized_text.json` |
+| SpecificContractPrefixes | A dictionary linking specific contractIDs to a specific prefix. These mappings will override Faction-specific mappings specified in the *FactionNames* dictionary (see above). Keys in this dictionary are the desired override Prefix and elements a list of Contract IDs to apply the prefix override for. | See `mod_localized_text.json` |
 

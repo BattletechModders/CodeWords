@@ -53,7 +53,9 @@ namespace CodeWords {
             try
             {
                 string jsonS = File.ReadAllText(localizationPath);
+                Log.Debug?.Write($"mod_localized_text.json settings are:({jsonS})");
                 Mod.LocalizedText = JsonConvert.DeserializeObject<ModText>(jsonS);
+                Log.Info?.Write($"INFO: No errors reading localization file.");
             }
             catch (Exception e)
             {

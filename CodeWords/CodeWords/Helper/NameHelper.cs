@@ -1,9 +1,11 @@
 ﻿using BattleTech;
+using Harmony;
 using Localize;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UIWidgets;
 using static CodeWords.ModText;
 
 namespace CodeWords.Helper
@@ -123,7 +125,7 @@ namespace CodeWords.Helper
             return name;
         }
 
-        public static string GenerateCodename(string employerFactionName)
+        public static string GenerateCodename(string employerFactionName, string ContractID)
         {
             Mod.Log.Info?.Write($"Generating codename for contract with employerName: {employerFactionName}");
 
@@ -131,8 +133,8 @@ namespace CodeWords.Helper
 
             // See if there are any factional names to add
             int factionNameCount = (int)Math.Floor(Mod.Config.FactionNameWeight * 10);
-            string prefix = Mod.LocalizedText.DefaultContractPrefix;
-            if (!string.IsNullOrEmpty(employerFactionName))
+            string prefix = GetPrefix(ContractID, out bool BypassFactionCheck);
+            if (!BypassFactionCheck && !string.IsNullOrEmpty(employerFactionName))
             {
                 bool hasFaction = Mod.LocalizedText.FactionNames.TryGetValue(employerFactionName, out FactionStrings employerStrings);
                 if (hasFaction)
@@ -141,7 +143,7 @@ namespace CodeWords.Helper
 
                     List<string> fNames = new List<string>();
                     fNames.AddRange(employerStrings.ContractNames);
-                    
+
                     if (factionNameCount > employerStrings.ContractNames.Count) factionNameCount = employerStrings.ContractNames.Count;
                     Mod.Log.Debug?.Write($" -- Will generate {factionNameCount} factionNames");
                     for (int i = 0; i < factionNameCount; i++)
@@ -150,7 +152,7 @@ namespace CodeWords.Helper
                         string fName = fNames.ElementAt(fNameIdx);
                         if (!string.IsNullOrEmpty(fName))
                         {
-                            string name = new Text(Mod.LocalizedText.ContractNameFormat, new object[] { prefix, "", fName}).ToString();
+                            string name = new Text(Mod.LocalizedText.ContractNameFormat, new object[] { prefix, "", fName }).ToString();
                             names.Add(name);
                         }
                         fNames.RemoveAt(fNameIdx);
@@ -180,6 +182,24 @@ namespace CodeWords.Helper
             return generatedName;
         }
 
+        private static string GetPrefix(string ContractID, out bool BypassFactionCheck)
+        {
+            if (Mod.LocalizedText.SpecificContractPrefixes.Count != 0)
+            {
+                foreach (var Mapping in Mod.LocalizedText.SpecificContractPrefixes)
+                {
+                    if (Mapping.Value.Contains(ContractID))
+                    {
+                        BypassFactionCheck = true;
+                        return Mapping.Key;
+                    }
+                }
+                
+            }
+            BypassFactionCheck= false;
+            return Mod.LocalizedText.DefaultContractPrefix;
+        }
+
         public static string GetOrCreateCodename(Contract contract)
         {
             if (contract == null) return ModConsts.DefaultCodeName;
@@ -190,7 +210,7 @@ namespace CodeWords.Helper
             if (!hasKey)
             {
                 FactionValue employerFaction = contract.GetTeamFaction(ModConsts.EmployerFactionId);
-                codename = GenerateCodename(employerFaction.Name);
+                codename = GenerateCodename(employerFaction.Name, contract.Override.ID);
                 ModState.ContractGUIDToCodeName.Add(cacheKey, codename);
                 ModState.NameBlacklist.Add(codename);
             }

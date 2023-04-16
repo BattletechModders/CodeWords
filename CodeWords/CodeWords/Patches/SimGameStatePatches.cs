@@ -1,12 +1,7 @@
-﻿using BattleTech;
-using BattleTech.Save;
+﻿using BattleTech.Save;
 using CodeWords.Helper;
-using Harmony;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CodeWords.Patches
 {
@@ -93,7 +88,7 @@ namespace CodeWords.Patches
                 {
                     Mod.Log.Debug?.Write($" -- Contract: {contract.DebugString()}");
                 }
-                
+
 
             }
         }

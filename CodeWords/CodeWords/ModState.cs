@@ -1,10 +1,10 @@
-﻿
-using BattleTech;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace CodeWords {
+namespace CodeWords
+{
 
-    public static class ModState {
+    public static class ModState
+    {
 
         public static Dictionary<string, string> ContractGUIDToCodeName = new Dictionary<string, string>();
         public static List<string> NameBlacklist = new List<string>();
@@ -13,7 +13,8 @@ namespace CodeWords {
         public static string ActiveContractGUID = null;
         public static SimGameState SimGameState = null;
 
-        public static void Reset() {
+        public static void Reset()
+        {
             // Reinitialize state
             ContractGUIDToCodeName.Clear();
             NullGuidCodename = ModConsts.DefaultCodeName;

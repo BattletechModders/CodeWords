@@ -1,11 +1,8 @@
-﻿using BattleTech;
-using Harmony;
-using Localize;
+﻿using Localize;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using UIWidgets;
 using static CodeWords.ModText;
 
 namespace CodeWords.Helper
@@ -194,9 +191,9 @@ namespace CodeWords.Helper
                         return Mapping.Key;
                     }
                 }
-                
+
             }
-            BypassFactionCheck= false;
+            BypassFactionCheck = false;
             return Mod.LocalizedText.DefaultContractPrefix;
         }
 

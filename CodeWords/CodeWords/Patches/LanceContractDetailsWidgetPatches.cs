@@ -1,9 +1,6 @@
-﻿using BattleTech;
-using BattleTech.Framework;
-using BattleTech.UI;
+﻿using BattleTech.UI;
 using BattleTech.UI.TMProWrapper;
 using CodeWords.Helper;
-using Harmony;
 
 namespace CodeWords.Patches
 {

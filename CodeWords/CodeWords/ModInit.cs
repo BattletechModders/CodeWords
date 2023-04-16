@@ -1,14 +1,15 @@
-﻿using Harmony;
+﻿using IRBTModUtils.Logging;
 using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
-using System.Reflection;
-using IRBTModUtils.Logging;
 using System.IO;
+using System.Reflection;
 
-namespace CodeWords {
+namespace CodeWords
+{
 
-    public static class Mod {
+    public static class Mod
+    {
 
         public const string HarmonyPackage = "us.frostraptor.CodeWords";
         public const string LogName = "code_words";
@@ -20,13 +21,17 @@ namespace CodeWords {
 
         public static readonly Random Random = new Random();
 
-        public static void Init(string modDirectory, string settingsJSON) {
+        public static void Init(string modDirectory, string settingsJSON)
+        {
             ModDir = modDirectory;
 
             Exception settingsE = null;
-            try {
+            try
+            {
                 Mod.Config = JsonConvert.DeserializeObject<ModConfig>(settingsJSON);
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 settingsE = e;
                 Mod.Config = new ModConfig();
             }
@@ -42,9 +47,12 @@ namespace CodeWords {
             Mod.Config.Init();
             Mod.Config.LogConfig();
 
-            if (settingsE != null) {
+            if (settingsE != null)
+            {
                 Log.Info?.Write($"ERROR reading settings file! Error was: {settingsE}");
-            } else {
+            }
+            else
+            {
                 Log.Info?.Write($"INFO: No errors reading settings file.");
             }
 
@@ -63,8 +71,7 @@ namespace CodeWords {
                 Log.Error?.Write(e, $"Failed to read localizations from: {localizationPath} due to error!");
             }
 
-            var harmony = HarmonyInstance.Create(HarmonyPackage);
-            harmony.PatchAll(Assembly.GetExecutingAssembly());
+            Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), HarmonyPackage);
         }
 
     }

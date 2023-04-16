@@ -44,8 +44,10 @@ namespace CodeWords.Patches
     [HarmonyPatch(typeof(SimGameState), "Rehydrate")]
     static class SimGameState_Rehydrate
     {
-        static void Prefix(SimGameState __instance, List<ContractData> ___contractBits)
+        static void Prefix(ref bool __runOriginal, SimGameState __instance, List<ContractData> ___contractBits)
         {
+            if (!__runOriginal) return;
+
             Mod.Log.Debug?.Write("SGS:R entered.");
 
             Mod.Log.Debug?.Write(" == CONTRACT DATA ==");
@@ -70,8 +72,10 @@ namespace CodeWords.Patches
     [HarmonyPatch(typeof(SimGameState), "CompleteLanceConfigurationPrep")]
     static class SimGameState_CompleteLanceConfigurationPrep
     {
-        static void Prefix(SimGameState __instance)
+        static void Prefix(ref bool __runOriginal, SimGameState __instance)
         {
+            if (!__runOriginal) return;
+
             Mod.Log.Info?.Write("SGS:CLCP invoked");
 
             Mod.Log.Debug?.Write($"  SGS.SelectedContract => {__instance?.SelectedContract?.DebugString()}");

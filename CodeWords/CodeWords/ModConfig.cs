@@ -14,6 +14,8 @@
 
         public string[] ExcludeContractsWithId = new string[] { };
 
+        public string[] ExcludeContractsWithName = new string[] { };
+
         public void LogConfig()
         {
             Mod.Log.Info?.Write("=== MOD CONFIG BEGIN ===");
@@ -21,11 +23,17 @@
             Mod.Log.Info?.Write("");
             Mod.Log.Info?.Write($"  FactionNameWeight: {FactionNameWeight}");
             Mod.Log.Info?.Write("");
-            Mod.Log.Info?.Write($"  -- ExcludedContractIds --");
+            Mod.Log.Info?.Write($"  -- ExcludeContractsWithId --");
             foreach (string id in ExcludeContractsWithId)
             {
                 Mod.Log.Info?.Write($" --- id: {id}");
             }
+            Mod.Log.Info?.Write($"  -- ExcludeContractsWithName --");
+            foreach (string name in ExcludeContractsWithName)
+            {
+                Mod.Log.Info?.Write($" --- name: {name}");
+            }
+
             Mod.Log.Info?.Write("");
         }
 

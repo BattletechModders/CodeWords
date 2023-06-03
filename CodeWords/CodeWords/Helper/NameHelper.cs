@@ -11,8 +11,14 @@ namespace CodeWords.Helper
     {
         public static bool CanHaveCodename(this Contract contract)
         {
+
+
             if (contract != null)
             {
+                Mod.Log.Debug?.Write($"Evaluating contract =>  overrideId: '{contract.OverrideID}'  name: '{contract.Name}'  internalName: '{contract.internalName}'  contractTypeId: '{contract.contractTypeID}'");
+                Mod.Log.Debug?.Write($"    IsFlashpointCampaignContract: {contract.IsFlashpointCampaignContract}  IsFlashpointContract: {contract.IsFlashpointContract}  isStoryContract: {contract.IsStoryContract}" +
+                    $"  isTutorial: {contract.IsTutorial}  isRestorationContract: {contract.IsRestorationContract}");
+
                 // Check for default exclusiosn; no flashpoints, story contracts, tutorials, etc
                 if (contract.IsFlashpointCampaignContract ||
                     contract.IsFlashpointContract ||
@@ -24,9 +30,11 @@ namespace CodeWords.Helper
                     return false;
                 }
 
-                // Check for contract name exclusion
                 if (contract.Override != null)
                 {
+                    Mod.Log.Debug?.Write($"  contractOverride =>  overrideId: '{contract.Override.ID}'  contractName: '{contract.Override.contractName}'  contractTypeValue: '{contract.Override.contractTypeValue}'");
+
+                    string contractId = contract.Override.ID ?? contract.OverrideID;                    
                     foreach (string excluded in Mod.Config.ExcludeContractsWithId)
                     {
                         if (excluded.Equals(contract.Override.ID, StringComparison.InvariantCultureIgnoreCase))
@@ -35,10 +43,20 @@ namespace CodeWords.Helper
                             return false;
                         }
                     }
+
+                    foreach (string excluded in Mod.Config.ExcludeContractsWithName)
+                    {
+                        string name = contract.Override.contractName ?? contract.Name;
+                        if (excluded.ToLower().Equals(contract.Name.ToLower(), StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            Mod.Log.Info?.Write($"Found codename exclusions for contract with name: '{name}', skipping.");
+                            return false;
+                        }
+                    }
                 }
             }
 
-            Mod.Log.Debug?.Write($"No exclusions found for contractID: '{contract?.Override?.ID}', enabling codenames.");
+            Mod.Log.Debug?.Write($"No exclusions found for contract name: `{contract?.Name}'  ID: '{contract?.Override?.ID}', enabling codenames.");
             return true;
         }
     }
